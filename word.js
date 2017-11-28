@@ -1,6 +1,6 @@
 // Requires our letter module from letter.js
 var Letter = require("./letter.js");
-
+var game = require ("./game.js");
 //-------------------------------------------
 
 // word consctructor - builds the game play word
@@ -13,12 +13,12 @@ var WordConstructor = function(word) {
     this.blankString = "";
 
     this.blanks = function() {
-        for (var i = 0; i < letterArray.length; i++) {
+        for (var i = 0; i < this.letterArray.length; i++) {
             if (this.letterArray[i] === " ") {
                 this.blanksArray.push(" ");
             }
             else {
-                thils.blanksArray.push("_");
+                this.blanksArray.push("_");
             }
         }
     };
@@ -26,7 +26,7 @@ var WordConstructor = function(word) {
     this.strings = function() {
         this.blankString = "";
         for (var i = 0; i < this.blanksArray.length; i++) {
-            thils.blankString = this.blankString + " " + this.blanksArray[i];
+            this.blankString = this.blankString + " " + this.blanksArray[i];
         }
     };
 
@@ -41,10 +41,10 @@ var WordConstructor = function(word) {
             }
         }
         else if (this.letterArray.indexOf(guess) === -1) {
-        
+
             guessesLeft --;
         }
     };
 };
 
-module.exports = Word;
+module.exports = WordConstructor;

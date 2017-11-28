@@ -1,6 +1,6 @@
 // Requires our Word module from word.js
-var Word = require("./word.js");
-
+var WordConstructor = require("./word.js");
+var game = require ("./game.js");
 //---------------------------------------
 
 // letter constructor
@@ -9,5 +9,5 @@ var Letter = function(letter) {
    this.shown = false;
 };
 
-// exports letter to 
+// exports letter to
 module.exports = Letter;
